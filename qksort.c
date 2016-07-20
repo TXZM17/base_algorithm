@@ -31,8 +31,8 @@ int qksort(int *array, int low, int high)
 			array[j] = temp;
 		}
 	}
-	partition(array, low, j);
-	partition(array, j+1, high);
+	qksort(array, low, j);
+	qksort(array, j+1, high);
 	return high;
 }
 
@@ -40,7 +40,7 @@ int qksort(int *array, int low, int high)
 int main()
 {
 	int a[10] = {23,12,45,33,66,15,24,56,87,12};
-	partition(a, 0, 9);
+	qksort(a, 0, 9);
 	for(int i=0; i<10; i++)
 	{
 		printf("%d\t", a[i]);
